@@ -7,7 +7,7 @@
     "start": "node server",
     "dev": "nodemon server",
     "test": "",
-    "build":""
+    "build":"node server"
   },
   "author": "olabode eto",
   "license": "ISC",
