@@ -1,5 +1,5 @@
 {
-  "name": "klasshour",
+  "name": "chrsicrown",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,9 +7,9 @@
     "start": "node server",
     "dev": "nodemon server",
     "test": "",
-    "build":"yarn install"
+    "build":""
   },
-  "author": "olabode eto",
+  "author": "Aluko Opeyemi",
   "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
