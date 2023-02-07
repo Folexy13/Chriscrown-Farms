@@ -1,16 +1,26 @@
 import "./App.scss";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ROUTES } from "./routes";
-import { Homepage } from "./Pages/Public";
+import { Homepage, Login, Register } from "./Pages/Public";
+import { Dashboard } from "./Pages/Private";
+import ProtectedPages from "./utils/protectedPage";
 
-function App() {
+const AppRoute = () => {
   return (
-    <div className="App">
+    <BrowserRouter>
       <Routes>
         <Route path={ROUTES.HOME} element={<Homepage />} />
+        <Route path={ROUTES.LOGIN} element={<Login />} />
+        <Route path={ROUTES.REGISTER} element={<Register />} />
+        <Route element={<ProtectedPages />}>
+          <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
+        </Route>
       </Routes>
-    </div>
+    </BrowserRouter>
   );
+};
+function App() {
+  return <AppRoute />;
 }
 
 export default App;

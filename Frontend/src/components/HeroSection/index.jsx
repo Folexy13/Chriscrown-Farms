@@ -12,6 +12,12 @@ const Index = () => {
           <img src={img} alt="" />
           Welcome to ChriscrownFarm
         </p>
+        <div className="sect">
+          <small>
+            Breaking the brigde between immediate wholesaler and the hardworking
+            farmer
+          </small>
+        </div>
       </div>
     </main>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { HeroSection, Navbar } from "../../../components";
+import { About, HeroSection, Navbar } from "../../../components";
 
-const Index = () => {
+const Homepage = () => {
   useEffect(() => {
     document.title = "Homepage";
   }, []);
@@ -10,8 +10,9 @@ const Index = () => {
     <div className="homepage">
       <Navbar />
       <HeroSection />
+      <About />
     </div>
   );
 };
 
-export default Index;
+export default Homepage;

@@ -1,0 +1,10 @@
+.main{
+    width: 100%;
+    position: relative;
+    .flex{
+        display: grid;
+        grid-template-columns: 70% 25%;
+        gap: 5%;
+        position: absolute;
+    }
+}

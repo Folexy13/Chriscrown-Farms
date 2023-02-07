@@ -45,7 +45,25 @@
             gap: 30px;
             li{
                 list-style: none;
+                cursor: pointer;
             }
+        }
+        .second_section_right{
+            border-radius: 5px;
+            padding: 5px 20px;
+            width: 120px;
+            cursor: pointer;
+            color: #fff;
+            background: transparent;
+            border: none;
+            outline: none;
+            display: flex;
+                // padding: 20px 50px;
+                justify-content: space-between;
+            li {
+                    list-style: none;
+                cursor: pointer;
+                }
         }
     }
 }
