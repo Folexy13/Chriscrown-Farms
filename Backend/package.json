@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server",
     "dev": "nodemon server",
-    "test": ""
+    "test": "",
+    "build":""
   },
   "author": "olabode eto",
   "license": "ISC",
