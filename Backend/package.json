@@ -7,7 +7,7 @@
     "start": "node server",
     "dev": "nodemon server",
     "test": "",
-    "build":"node server"
+    "build":"yarn install"
   },
   "author": "olabode eto",
   "license": "ISC",
