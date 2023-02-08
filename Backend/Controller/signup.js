@@ -7,7 +7,7 @@ const signup = async (req, res) => {
   const hashPassword = await bcrypt.hash(password, salt);
   const OTPCode = Math.floor(1000 + Math.random() * 9000);
 
-  const findUserEmail = await UserModel.findOne({ email });
+  const findUserEmail = await UserModel.findOne({ email, phone });
   if (findUserEmail)
     res.status(200).send({ status: false, message: "User already exist" });
 
