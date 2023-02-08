@@ -25,7 +25,8 @@ const signup = async (req, res) => {
       if (newUser) {
         res.status(200).send({
           status: true,
-          message: "Account created successfully",
+          message:
+            "Account created successfully,check your email to verify your account",
         });
       }
     } catch (error) {
