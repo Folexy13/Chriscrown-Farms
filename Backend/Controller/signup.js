@@ -19,14 +19,14 @@ const signup = async (req, res) => {
         email,
         role,
         phone,
-        code: OTPCode,
       });
+      const token = jwt.sign(user, secret_key);
       const newUser = await user.save();
       if (newUser) {
         res.status(200).send({
           status: true,
-          message:
-            "Account created successfully,check your email to verify your account",
+          message: "Account created successfully,",
+          token,
         });
       }
     } catch (error) {

@@ -19,21 +19,11 @@ const login = async (req, res) => {
         .send({ status: false, message: "Invalid credentials!" });
     }
 
-    const data = {
-      userID: user?._id,
-      fullname: user?.fullname,
-      role: user?.role,
-      signature: user?.signature,
-      image: user?.imageUrl,
-      email: user?.email,
-      phone: user?.phone,
-    };
-    const token = jwt.sign(data, secret_key);
+    const token = jwt.sign(user, secret_key);
     if (user) {
       res.status(200).send({
         status: true,
         message: "Login successful",
-        // payload: { data },
         token,
       });
     }
