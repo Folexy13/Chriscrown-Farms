@@ -14,6 +14,8 @@ const AppRoute = () => {
         <Route path={ROUTES.REGISTER} element={<Register />} />
         <Route element={<ProtectedPages />}>
           <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
+          <Route path={ROUTES.PAYMENTS} element={<Dashboard />} />
+          <Route path={ROUTES.PROFILE} element={<Dashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>

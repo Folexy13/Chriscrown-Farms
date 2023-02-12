@@ -6,6 +6,7 @@ class USER {
   user_login = async (data) => {
     try {
       const response = await api.post("/user/login", data);
+
       if (response?.status && response.token) {
         removeStoredAuthToken();
         storeAuthToken(response.token);
@@ -20,14 +21,14 @@ class USER {
   };
   //signup new user
   user_signup = async (data) => {
-    console.log(data);
     try {
-      const response = await api.post("/user/signup", data);
+      const response = await api.post("/user/register", data);
       if (response?.status) {
         storeAuthToken(response.token);
         return response;
       }
     } catch (error) {
+      console.log(error);
       return error;
     }
   };

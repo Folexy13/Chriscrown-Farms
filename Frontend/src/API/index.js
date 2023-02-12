@@ -1,17 +1,18 @@
 import axios from "axios";
 import { getStoredAuthToken, removeStoredAuthToken } from "../utils";
 
-// const baseurl = "https://tolu-api.onrender.com";
+// const baseurl = "https://cr-web-api.onrender.com";
 
 const baseurl = "http://localhost:4000"; //localhost
 // console.log("Token For Use:", getStoredAuthToken());
 const api = axios.create({
   baseURL: `${baseurl}/chrsicrown_api/v1`,
 });
+
 api.interceptors.request.use(
   (request) => {
     request.headers = {
-      // "Content-Type": "application/json",
+      "Content-Type": "application/json",
       Authorization: getStoredAuthToken()
         ? `Bearer ${getStoredAuthToken()}`
         : "",
@@ -26,7 +27,7 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
   (response) => {
-    // console.log("response received");
+    console.log("response received");
     if (response?.data?.token) {
       response.headers = {
         // "Content-Type": "application/json",

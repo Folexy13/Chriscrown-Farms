@@ -60,10 +60,14 @@
                     margin-bottom: 10px;
                 }
 
-                input {
+                input,select{
                     width: calc(100% - 40px);
                     padding: 10px 20px;
                     border-radius: 5px;
+                }
+                select{
+                    width: 100%;
+                    background: transparent;
                 }
 
                 button {

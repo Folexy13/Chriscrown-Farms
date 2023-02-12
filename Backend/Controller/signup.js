@@ -1,11 +1,12 @@
 const UserModel = require("../Model/clientModel");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const secret_key = "codebreedKHklasshour";
 
 const signup = async (req, res) => {
   const { fullname, password, role, email, phone } = req.body;
   const salt = await bcrypt.genSalt(10);
   const hashPassword = await bcrypt.hash(password, salt);
-  const OTPCode = Math.floor(1000 + Math.random() * 9000);
 
   const findUserEmail = await UserModel.findOne({ email, phone });
   if (findUserEmail)
@@ -20,7 +21,7 @@ const signup = async (req, res) => {
         role,
         phone,
       });
-      const token = jwt.sign(user, secret_key);
+      const token = jwt.sign(req.body, secret_key);
       const newUser = await user.save();
       if (newUser) {
         res.status(200).send({

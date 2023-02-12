@@ -14,6 +14,8 @@ const connection_string =
 const PORT = process.env.ENVIRONMENT === "production" ? process.env.PORT : 4000;
 
 //create connection to mongodb database
+mongoose.set("strictQuery", true);
+
 mongoose
   .connect(connection_string, {
     useNewUrlParser: true,
@@ -29,7 +31,6 @@ mongoose
   .catch((e) => {
     console.log(e.message);
   });
-
 //=================Server settings ==================
 app.use(express.json());
 app.use(cookieParser());
