@@ -7,6 +7,7 @@ import Card from "./Card";
 import DashboardLayout from "./Layout/DashboardLayout";
 import Spinner from "./Spinner";
 import Table from "./Table";
+import Modal from "./Modal";
 import ProductCard from "./ProductCard";
 
 export {
@@ -17,6 +18,7 @@ export {
   DBHeader,
   DBNavbar,
   Card,
+  Modal,
   DashboardLayout,
   ProductCard,
   Table,
