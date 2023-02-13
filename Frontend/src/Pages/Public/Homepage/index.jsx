@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { About, HeroSection, Navbar } from "../../../components";
+import { About, HeroSection, Navbar, ProductCard } from "../../../components";
 
 const Homepage = () => {
   useEffect(() => {
@@ -10,6 +10,7 @@ const Homepage = () => {
     <div className="homepage">
       <Navbar />
       <HeroSection />
+      <ProductCard />
       <About />
     </div>
   );

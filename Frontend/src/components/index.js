@@ -7,6 +7,7 @@ import Card from "./Card";
 import DashboardLayout from "./Layout/DashboardLayout";
 import Spinner from "./Spinner";
 import Table from "./Table";
+import ProductCard from "./ProductCard";
 
 export {
   Navbar,
@@ -17,5 +18,6 @@ export {
   DBNavbar,
   Card,
   DashboardLayout,
+  ProductCard,
   Table,
 };

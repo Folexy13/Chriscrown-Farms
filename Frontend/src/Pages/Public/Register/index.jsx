@@ -14,6 +14,7 @@ const Register = () => {
   let [disabledBtn, setDisabledBtn] = useState(false);
   const [fullname, setFullname] = useState("");
   const [role, setRole] = useState("");
+  const [gender, setGender] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,6 +33,7 @@ const Register = () => {
       phone,
       password,
       role,
+      gender,
     };
     await userOBJ.user_signup(payload).then((res) => {
       if (res.status) {
@@ -86,6 +88,16 @@ const Register = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+          </div>
+          <div className="form_control">
+            <label htmlFor="">Gender</label>
+            <select name="" id="" onChange={(e) => setGender(e.target.value)}>
+              <option value="" selected disabled>
+                Select your gender
+              </option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
           </div>
           <div className="form_control">
             <label htmlFor="">Role</label>
