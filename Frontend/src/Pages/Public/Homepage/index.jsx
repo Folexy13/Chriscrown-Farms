@@ -10,7 +10,10 @@ const Homepage = () => {
     <div className="homepage">
       <Navbar />
       <HeroSection />
-      <ProductCard />
+      <div>
+        <h1 style={{ textAlign: "center" }}>Available Product</h1>
+        <ProductCard />
+      </div>
       <About />
     </div>
   );
