@@ -19,7 +19,7 @@ const login = async (req, res) => {
         .send({ status: false, message: "Invalid credentials!" });
     }
 
-    const token = jwt.sign({ user }, secret_key);
+    const token = jwt.sign({ user: user.select({ password: 0 }) }, secret_key);
     if (user) {
       res.status(200).send({
         status: true,

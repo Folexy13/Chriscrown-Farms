@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const secret_key = "codebreedKHklasshour";
 
 const signup = async (req, res) => {
-  const { fullname, password, role, email, phone,gender } = req.body;
+  const { fullname, password, role, email, phone, gender } = req.body;
   const salt = await bcrypt.genSalt(10);
   const hashPassword = await bcrypt.hash(password, salt);
 
@@ -20,9 +20,12 @@ const signup = async (req, res) => {
         email,
         role,
         phone,
-        gender
+        gender,
       });
-      const token = jwt.sign(req.body, secret_key);
+      const token = jwt.sign(
+        { user: user.select({ password: 0 }) },
+        secret_key
+      );
       const newUser = await user.save();
       if (newUser) {
         res.status(200).send({
