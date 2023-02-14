@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import "./Styles.scss";
 import { DashboardLayout, Modal, Table } from "../../../components";
 import { FiPlus } from "react-icons/fi";
+import { getStoredAuthToken } from "../../../utils";
 const Dashboard = () => {
   const [show, setShow] = useState(false);
-  const [title, settitle] = useState('');
+  const [title, settitle] = useState("");
   const handleShow = () => {
     setShow(!show);
   };
+  console.log(getStoredAuthToken());
   return (
     <DashboardLayout>
       <div className="main">
@@ -18,17 +20,17 @@ const Dashboard = () => {
         <Table width={"100%"} />
       </div>
       <Modal isOpen={show} close={handleShow} trigger={handleShow}>
-       <form action="">
-        <div className="form-control">
-        <label htmlFor="title">title:</label>
-        <input
-          type="text"
-          id="title"
-          value={title}
-          onChange={(event) => settitle(event.target.value)}
-        />
-        </div>
-       </form>
+        <form action="">
+          <div className="form-control">
+            <label htmlFor="title">title:</label>
+            <input
+              type="text"
+              id="title"
+              value={title}
+              onChange={(event) => settitle(event.target.value)}
+            />
+          </div>
+        </form>
       </Modal>
     </DashboardLayout>
   );

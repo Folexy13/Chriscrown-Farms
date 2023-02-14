@@ -36,6 +36,7 @@ const Register = () => {
       gender,
     };
     await userOBJ.user_signup(payload).then((res) => {
+      console.log(res);
       if (res.status) {
         toast.success(res.message);
         window.location.replace("/dashboard");
