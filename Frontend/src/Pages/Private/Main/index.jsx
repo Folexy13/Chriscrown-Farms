@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Styles.scss";
-import { DashboardLayout, Table } from "../../../components";
+import { DashboardLayout, Modal, Table } from "../../../components";
 import { FiPlus } from "react-icons/fi";
 const Dashboard = () => {
   const [show, setShow] = useState(false);
+  const [title, settitle] = useState('');
   const handleShow = () => {
     setShow(!show);
   };
@@ -16,6 +17,19 @@ const Dashboard = () => {
         </div>
         <Table width={"100%"} />
       </div>
+      <Modal isOpen={show} close={handleShow} trigger={handleShow}>
+       <form action="">
+        <div className="form-control">
+        <label htmlFor="title">title:</label>
+        <input
+          type="text"
+          id="title"
+          value={title}
+          onChange={(event) => settitle(event.target.value)}
+        />
+        </div>
+       </form>
+      </Modal>
     </DashboardLayout>
   );
 };
