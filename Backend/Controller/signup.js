@@ -23,7 +23,7 @@ const signup = async (req, res) => {
         gender,
       });
       const token = jwt.sign(
-        { user: user.select({ password: 0 }) },
+        { fullname, email, role, phone, gender },
         secret_key
       );
       const newUser = await user.save();
