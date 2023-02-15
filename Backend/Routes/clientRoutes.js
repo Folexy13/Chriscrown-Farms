@@ -17,9 +17,19 @@ router.post(`${BaseUrl.client}/user/login`, userController.login);
 router.post(
   `${BaseUrl.client}/add-product`,
   authMiddleware,
-  userController.login
+  userController.addProduct
 );
 
+router.get(
+  `${BaseUrl.client}/get/all-products`,
+  authMiddleware,
+  userController.getAllProducts
+);
+router.get(
+  `${BaseUrl.client}/get/product`,
+  authMiddleware,
+  userController.getAllProducts
+);
 // // Reset password
 // router.post(
 //   `${BaseUrl.client}/user/reset-password`,
