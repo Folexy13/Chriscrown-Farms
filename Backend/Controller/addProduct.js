@@ -9,12 +9,12 @@ const AddProduct = async (req, res) => {
       price,
       quantity,
       status,
-      farmer,
       image,
     });
     const savedModel = await newProduct.save();
+    console.log(savedModel);
     if (savedModel) {
-      res.status(200).send({
+      return res.status(200).send({
         status: true,
         message: "Product Added successfully",
       });
