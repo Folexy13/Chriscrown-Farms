@@ -32,5 +32,47 @@
   .modal-body {
     max-height: calc(100vh - 120px);
     overflow-y: auto;
+    form {
+        padding: 10px 20px;
+        // box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+        border-radius: 5px;
+        // min-height:400px ;
+        background: #fff;
+        color: #172517;
+    
+        a {
+          color: red !important;
+        }
+    
+        .form_control {
+          margin: 20px 0;
+    
+          label {
+            width: 100%;
+          }
+    
+          input ,select{
+            width: calc(100% - 40px);
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: transparent;
+            margin-top: 10px;
+          }
+          select{
+            width: 100%;
+          }
+          button {
+            background: darkgreen;
+            color: #fff;
+            border-radius: 5px;
+            padding: 15px 20px;
+            outline: none;
+            border: 0;
+            width: calc(100%);
+            cursor: pointer;
+          }
+    
+        }
+      }
   }
   

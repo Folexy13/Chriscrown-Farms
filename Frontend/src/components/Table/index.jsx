@@ -5,7 +5,7 @@ import EmptyState from "../EmptyState";
 const Table = ({ width, headData, bodyData, type, isEmpty }) => {
   return (
     <>
-      <table class="styled-table" style={{ width }}>
+      <table className="styled-table" style={{ width }}>
         <thead>
           <tr>
             {headData.map((el, i) => {
@@ -34,10 +34,17 @@ const Table = ({ width, headData, bodyData, type, isEmpty }) => {
               : bodyData.map((el, i) => {
                   return (
                     <tr key={i}>
-                      <td>{el.stockItem}</td>
+                      <td>{el.title}</td>
+                      <td>{el.category}</td>
+                      <td>NGN {el.price}</td>
                       <td>{el.quantity}</td>
-                      <td>{el.description}</td>
-                      <td>{el.date}</td>
+                      <td
+                        style={{
+                          color: el.status === "open" ? "green" : "red",
+                        }}
+                      >
+                        {el.status}
+                      </td>
                     </tr>
                   );
                 })}

@@ -32,6 +32,7 @@ class USER {
       return error;
     }
   };
+  //reset password
   user_reset = async (data) => {
     try {
       const response = await api.post("/user/reset-password", data);
@@ -40,6 +41,7 @@ class USER {
       return error;
     }
   };
+  //
   user_change_password = async (data, token) => {
     try {
       const response = await api.put(
@@ -59,11 +61,12 @@ class USER {
       return error;
     }
   };
-  user_add_stock = async (data) => {
+  user_add_product = async (data) => {
     try {
-      const response = await api.post(`/add-stock`, data);
+      const response = await api.post(`/add-product`, data);
       return response;
     } catch (error) {
+      console.log(error);
       return error;
     }
   };
@@ -86,16 +89,25 @@ class USER {
     }
   };
 
-  get_all_stocks = async (page) => {
+  get_all_products = async (page) => {
     try {
-      const response = await api.get(`/get/all-stocks?page=${page}`);
+      const response = await api.get(`/get/all-products?page=${page}`);
       return response;
     } catch (error) {
       return error;
     }
   };
-
-  get_search_stock = async (page, filters) => {
+  get_product = async (page, phone) => {
+    try {
+      const response = await api.get(
+        `/get/product?page=${page}&phone=${phone}`
+      );
+      return response;
+    } catch (error) {
+      return error;
+    }
+  };
+  get_search_product = async (page, filters) => {
     try {
       const response = await api.get(`/search/${page}/?${filters}`);
       return response;

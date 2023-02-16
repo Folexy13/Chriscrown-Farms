@@ -26,6 +26,7 @@ const productSchema = new Schema(
     status: {
       type: String,
       enum: ["open", "closed"],
+      default: "open",
     },
     farmer: {
       type: mongoose.Schema.Types.ObjectId,
