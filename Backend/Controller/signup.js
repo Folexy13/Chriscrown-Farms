@@ -10,7 +10,9 @@ const signup = async (req, res) => {
 
   const findUserEmail = await UserModel.findOne({ email, phone });
   if (findUserEmail)
-    res.status(200).send({ status: false, message: "User already exist" });
+    return res
+      .status(200)
+      .send({ status: false, message: "User already exist" });
 
   if (!findUserEmail) {
     try {
@@ -28,7 +30,7 @@ const signup = async (req, res) => {
       );
       const newUser = await user.save();
       if (newUser) {
-        res.status(200).send({
+        return res.status(200).send({
           status: true,
           message: "Account created successfully,",
           token,
@@ -36,7 +38,7 @@ const signup = async (req, res) => {
       }
     } catch (error) {
       console.log(error);
-      res.status(200).send({
+      return res.status(200).send({
         status: false,
         message: "An error occured - " + error,
       });
