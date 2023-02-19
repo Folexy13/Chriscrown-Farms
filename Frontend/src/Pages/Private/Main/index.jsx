@@ -26,6 +26,7 @@ const Dashboard = () => {
     const getData = async () => {
       await userOBJ.get_product(1, phone).then((res) => {
         setData(res.payload);
+        console.log(res.payload);
       });
     };
     getData();
@@ -76,7 +77,14 @@ const Dashboard = () => {
               Add Product
             </div>
             <Table
-              headData={["Title", "Category", "Price", "Quantity", "Status"]}
+              headData={[
+                "Title",
+                "Category",
+                "Price",
+                "Quantity",
+                "Status",
+                "Action",
+              ]}
               bodyData={data}
               width={"100%"}
               isEmpty={!data.length}

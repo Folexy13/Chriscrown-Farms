@@ -24,6 +24,7 @@ class USER {
     try {
       const response = await api.post("/user/register", data);
       if (response?.status) {
+        removeStoredAuthToken();
         storeAuthToken(response.token);
         return response;
       }
