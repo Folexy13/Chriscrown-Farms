@@ -38,7 +38,7 @@ const signup = async (req, res) => {
       }
     } catch (error) {
       console.log(error);
-      return res.status(200).send({
+      res.status(200).send({
         status: false,
         message: "An error occured - " + error,
       });
