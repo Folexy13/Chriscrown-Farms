@@ -1,8 +1,11 @@
+const User = require("../Model/clientModel");
 const ProductModel = require("../Model/products.model");
 
 const AddProduct = async (req, res) => {
-  const { title, category, price, quantity, status, image, farmer } = req.body;
+  const { title, category, price, quantity, status, image, farmerEmail } =
+    req.body;
   try {
+    const farmer = await User.findOne({ email: farmerEmail });
     const newProduct = new ProductModel({
       title,
       category,
@@ -10,7 +13,7 @@ const AddProduct = async (req, res) => {
       quantity,
       status,
       image,
-      farmer,
+      farmer: farmer._id,
     });
     const savedModel = await newProduct.save();
     if (savedModel) {

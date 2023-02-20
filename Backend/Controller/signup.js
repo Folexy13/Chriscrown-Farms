@@ -15,9 +15,7 @@ const signup = async (req, res) => {
     return res
       .status(200)
       .send({ status: false, message: "User already exist" });
-  }
-
-  if (!findUserEmail) {
+  } else {
     try {
       const user = new UserModel({
         fullname,
