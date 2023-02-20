@@ -11,7 +11,6 @@ const getAllProducts = async (req, res) => {
 const getProduct = async (req, res) => {
   const { farmerId, page } = req.query;
   const products = await ProductModel.find({ farmer: farmerId });
-  console.log(farmerId);
   const results = paginatedData(products, page);
   res.status(200).send(results);
 };

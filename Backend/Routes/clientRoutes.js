@@ -28,7 +28,7 @@ router.get(
 router.get(
   `${BaseUrl.client}/get/product`,
   authMiddleware,
-  userController.getAllProducts
+  userController.getProduct
 );
 // // Reset password
 // router.post(
