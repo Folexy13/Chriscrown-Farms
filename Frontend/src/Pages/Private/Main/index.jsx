@@ -17,19 +17,19 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
   const [data, setData] = useState([]);
-  const { role, phone, email } = getClient();
+  const { role, _id, email } = getClient();
 
   const handleShow = () => {
     setShow(!show);
   };
   useEffect(() => {
     const getData = async () => {
-      await userOBJ.get_product(1, phone).then((res) => {
+      await userOBJ.get_product(1, _id).then((res) => {
         setData(res.payload);
       });
     };
     getData();
-  }, [phone]);
+  }, [_id]);
   const handleImageUpload = async (file) => {
     setImageLoading(true);
     const formData = new FormData();

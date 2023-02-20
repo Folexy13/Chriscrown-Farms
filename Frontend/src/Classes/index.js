@@ -98,10 +98,10 @@ class USER {
       return error;
     }
   };
-  get_product = async (page, phone) => {
+  get_product = async (page, id) => {
     try {
       const response = await api.get(
-        `/get/product?page=${page}&phone=${phone}`
+        `/get/product?page=${page}&farmerId=${id}`
       );
       return response;
     } catch (error) {
