@@ -17,8 +17,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
   const [data, setData] = useState([]);
-  const { role, phone, _id } = getClient();
-  console.log(role);
+  const { role, phone, email } = getClient();
 
   const handleShow = () => {
     setShow(!show);
@@ -55,7 +54,7 @@ const Dashboard = () => {
       price,
       image,
       quantity,
-      farmer: _id,
+      farmerEmail: email,
     };
     await userOBJ.user_add_product(payload).then((res) => {
       if (res.status) {
