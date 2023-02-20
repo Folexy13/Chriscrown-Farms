@@ -30,6 +30,17 @@ router.get(
   authMiddleware,
   userController.getProduct
 );
+
+router.post(
+  `${BaseUrl.client}/delete/product`,
+  authMiddleware,
+  userController.deleteProduct
+);
+router.post(
+  `${BaseUrl.client}/edit/product`,
+  authMiddleware,
+  userController.editProduct
+);
 // // Reset password
 // router.post(
 //   `${BaseUrl.client}/user/reset-password`,

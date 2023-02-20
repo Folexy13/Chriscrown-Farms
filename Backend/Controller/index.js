@@ -3,6 +3,7 @@ const login = require("./login");
 const verify = require("./verifyAccount");
 const addProduct = require("./addProduct");
 const { getAllProducts, getProduct } = require("./getProduct");
+const { editProduct, deleteProduct } = require("./editProduct");
 
 const userController = {
   signup,
@@ -11,6 +12,8 @@ const userController = {
   addProduct,
   getAllProducts,
   getProduct,
+  editProduct,
+  deleteProduct,
 };
 
 module.exports = userController;
