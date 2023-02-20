@@ -9,8 +9,8 @@ const getAllProducts = async (req, res) => {
 };
 
 const getProduct = async (req, res) => {
-  const { phone, page } = req.query;
-  const products = await ProductModel.find({ phone });
+  const { farmerId, page } = req.query;
+  const products = await ProductModel.find({ farmer: farmerId });
   const results = paginatedData(products, page);
   res.status(200).send(results);
 };
