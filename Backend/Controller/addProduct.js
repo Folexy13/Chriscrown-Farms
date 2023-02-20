@@ -1,7 +1,7 @@
 const ProductModel = require("../Model/products.model");
 
 const AddProduct = async (req, res) => {
-  const { title, category, price, quantity, status, image } = req.body;
+  const { title, category, price, quantity, status, image, farmer } = req.body;
   try {
     const newProduct = new ProductModel({
       title,
@@ -10,9 +10,9 @@ const AddProduct = async (req, res) => {
       quantity,
       status,
       image,
+      farmer,
     });
     const savedModel = await newProduct.save();
-    console.log(savedModel);
     if (savedModel) {
       return res.status(200).send({
         status: true,
