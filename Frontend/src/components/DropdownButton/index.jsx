@@ -26,15 +26,15 @@ function DropdownMenuItem({ onClick, children }) {
   );
 }
 
-export default function Dropdown({ options, onSelect }) {
+export default function Dropdown({ options, onSelect, ID }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleButtonClick = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleMenuItemClick = (option) => {
-    onSelect(option);
+  const handleMenuItemClick = (option, id) => {
+    onSelect({ ...option, id });
     setIsOpen(false);
   };
 
@@ -48,7 +48,7 @@ export default function Dropdown({ options, onSelect }) {
         {options.map((option) => (
           <DropdownMenuItem
             key={option.id}
-            onClick={() => handleMenuItemClick(option)}
+            onClick={() => handleMenuItemClick(option, ID)}
           >
             {option.label}
           </DropdownMenuItem>

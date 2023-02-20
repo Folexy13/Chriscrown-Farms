@@ -108,6 +108,22 @@ class USER {
       return error;
     }
   };
+  edit_product = async (id) => {
+    try {
+      const response = await api.post(`/edit/product`, { id });
+      return response;
+    } catch (error) {
+      return error;
+    }
+  };
+  delete_product = async (id) => {
+    try {
+      const response = await api.post(`/delete/product`, id);
+      return response;
+    } catch (error) {
+      return error;
+    }
+  };
   get_search_product = async (page, filters) => {
     try {
       const response = await api.get(`/search/${page}/?${filters}`);

@@ -2,12 +2,36 @@ import React from "react";
 import "./Styles.scss";
 import EmptyState from "../EmptyState";
 import { DDBTN } from "..";
+import userOBJ from "../../Classes";
+import { toast } from "react-toastify";
 
 const Table = ({ width, headData, bodyData, type, isEmpty }) => {
+  const handleEdit = async (id) => {
+    await userOBJ.edit_product(id).then((res) => {
+      if (res.status) {
+        toast.success(res.message);
+        return;
+      } else {
+        toast.error(res.message);
+        return;
+      }
+    });
+  };
+  const handleDelete = async (id) => {
+    await userOBJ.delete_product(id).then((res) => {
+      if (res.status) {
+        toast.success(res.message);
+        return;
+      } else {
+        toast.error(res.message);
+        return;
+      }
+    });
+  };
   const options = [
-    { id: 1, label: "Edit" },
+    { id: 1, label: "Edit", function: handleEdit },
     { id: 2, label: "View" },
-    { id: 3, label: "Delete" },
+    { id: 3, label: "Delete", function: handleDelete },
   ];
   const handleSelect = (val) => {
     console.log(val);
@@ -55,7 +79,11 @@ const Table = ({ width, headData, bodyData, type, isEmpty }) => {
                         {el.status}
                       </td>
                       <td>
-                        <DDBTN options={options} onSelect={handleSelect} />
+                        <DDBTN
+                          options={options}
+                          onSelect={handleSelect}
+                          ID={el._id}
+                        />
                       </td>
                     </tr>
                   );
