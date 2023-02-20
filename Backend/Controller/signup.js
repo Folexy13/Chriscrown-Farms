@@ -25,11 +25,12 @@ const signup = async (req, res) => {
         phone,
         gender,
       });
+
+      const newUser = await user.save();
       const token = jwt.sign(
         { fullname, email, role, phone, gender },
         secret_key
       );
-      const newUser = await user.save();
       if (newUser) {
         return res.status(200).send({
           status: true,
