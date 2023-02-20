@@ -18,6 +18,7 @@ const Dashboard = () => {
   const [imageLoading, setImageLoading] = useState(true);
   const [data, setData] = useState([]);
   const { role, phone, _id } = getClient();
+  console.log(role);
 
   const handleShow = () => {
     setShow(!show);
