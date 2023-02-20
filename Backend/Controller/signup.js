@@ -9,10 +9,11 @@ const signup = async (req, res) => {
   const hashPassword = await bcrypt.hash(password, salt);
 
   const findUserEmail = await UserModel.findOne({ email, phone });
-  if (findUserEmail)
+  if (findUserEmail) {
     return res
       .status(200)
       .send({ status: false, message: "User already exist" });
+  }
 
   if (!findUserEmail) {
     try {
