@@ -17,7 +17,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
   const [data, setData] = useState([]);
-  const { role, phone } = getClient();
+  const { role, phone, _id } = getClient();
 
   const handleShow = () => {
     setShow(!show);
@@ -26,11 +26,10 @@ const Dashboard = () => {
     const getData = async () => {
       await userOBJ.get_product(1, phone).then((res) => {
         setData(res.payload);
-        console.log(res.payload);
       });
     };
     getData();
-  }, []);
+  }, [phone]);
   const handleImageUpload = async (file) => {
     setImageLoading(true);
     const formData = new FormData();
@@ -55,6 +54,7 @@ const Dashboard = () => {
       price,
       image,
       quantity,
+      farmer: _id,
     };
     await userOBJ.user_add_product(payload).then((res) => {
       if (res.status) {

@@ -1,8 +1,17 @@
 import React from "react";
 import "./Styles.scss";
 import EmptyState from "../EmptyState";
+import { DDBTN } from "..";
 
 const Table = ({ width, headData, bodyData, type, isEmpty }) => {
+  const options = [
+    { id: 1, label: "Edit" },
+    { id: 2, label: "View" },
+    { id: 3, label: "Delete" },
+  ];
+  const handleSelect = (val) => {
+    console.log(val);
+  };
   return (
     <>
       <table className="styled-table" style={{ width }}>
@@ -44,6 +53,9 @@ const Table = ({ width, headData, bodyData, type, isEmpty }) => {
                         }}
                       >
                         {el.status}
+                      </td>
+                      <td>
+                        <DDBTN options={options} onSelect={handleSelect} />
                       </td>
                     </tr>
                   );

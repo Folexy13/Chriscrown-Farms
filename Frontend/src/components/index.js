@@ -9,6 +9,7 @@ import Spinner from "./Spinner";
 import Table from "./Table";
 import Modal from "./Modal";
 import ProductCard from "./ProductCard";
+import DDBTN from "./DropdownButton";
 
 export {
   Navbar,
@@ -18,6 +19,7 @@ export {
   DBHeader,
   DBNavbar,
   Card,
+  DDBTN,
   Modal,
   DashboardLayout,
   ProductCard,
