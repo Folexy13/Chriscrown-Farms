@@ -20,11 +20,7 @@ router.post(
   userController.addProduct
 );
 
-router.get(
-  `${BaseUrl.client}/get/all-products`,
-  authMiddleware,
-  userController.getAllProducts
-);
+router.get(`${BaseUrl.client}/get/all-products`, userController.getAllProducts);
 router.get(
   `${BaseUrl.client}/get/product`,
   authMiddleware,
