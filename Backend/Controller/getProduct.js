@@ -3,7 +3,9 @@ const paginatedData = require("../utils/paginateData");
 
 const getAllProducts = async (req, res) => {
   const { page } = req.query;
-  const products = await ProductModel.find({}).populate("farmer");
+  const products = await ProductModel.find({})
+    .populate("farmer")
+    .sort({ _id: -1 });
   const results = paginatedData(products, page);
   res.status(200).send(results);
 };
