@@ -5,15 +5,17 @@ import userOBJ from "../../../Classes";
 const Homepage = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
+    let mounted = true;
     document.title = "Homepage";
-    const getData = async () => {
-      await userOBJ.get_all_products(1).then((res) => {
-        setData(res.payload);
-      });
+    userOBJ.get_all_products(1).then((res) => {
+      if (mounted) {
+        // setData(res.payload);
+      }
+    });
+    return () => {
+      mounted = false;
     };
-    getData();
   }, []);
-  console.log(data);
   return (
     <div className="homepage">
       <Navbar />

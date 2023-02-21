@@ -9,6 +9,7 @@ const ProductCard = ({ products }) => (
         <h3>{product.title}</h3>
         <p className="description">{product.description}</p>
         <p className="price">NGN{product.price}</p>
+        <button>Add To Cart</button>
       </div>
     ))}
   </div>

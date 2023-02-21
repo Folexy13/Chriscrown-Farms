@@ -1,12 +1,13 @@
 import React from "react";
 import { BiHomeAlt, BiWorld } from "react-icons/bi";
 import { RiToolsLine } from "react-icons/ri";
-import { AiOutlineContacts } from "react-icons/ai";
-import { FiLogIn } from "react-icons/fi";
+import { AiFillDashboard, AiOutlineContacts } from "react-icons/ai";
+import { FiLogIn, FiLogOut } from "react-icons/fi";
 import { BiCartAlt } from "react-icons/bi";
 // import {}
 import "./Styles.scss";
 import { Link } from "react-router-dom";
+import { getStoredAuthToken } from "../../utils";
 
 const Index = () => {
   return (
@@ -38,14 +39,31 @@ const Index = () => {
           </li>
         </ul>
         <ul className="second_section_right">
-          <li>
-            <Link to="/login">
-              <FiLogIn /> Login
-            </Link>
-          </li>
-          <li>
-            <BiCartAlt /> Cart
-          </li>
+          {!getStoredAuthToken() ? (
+            <>
+              <li>
+                <Link to="/login">
+                  <FiLogIn /> Login
+                </Link>
+              </li>
+              <li>
+                <BiCartAlt /> Cart
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/dashboard">
+                  <AiFillDashboard /> Dashboard
+                </Link>
+              </li>
+              <li>
+                <Link to="#">
+                  <FiLogOut /> Logout
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>

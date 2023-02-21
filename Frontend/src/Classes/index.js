@@ -81,15 +81,6 @@ class USER {
     }
   };
 
-  get_all_records = async (page) => {
-    try {
-      const response = await api.get(`/get/all-records?page=${page}`);
-      return response;
-    } catch (error) {
-      return error;
-    }
-  };
-
   get_all_products = async (page) => {
     try {
       const response = await api.get(`/get/all-products?page=${page}`);
