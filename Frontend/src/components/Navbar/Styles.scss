@@ -51,13 +51,14 @@
         .second_section_right{
             border-radius: 5px;
             padding: 5px 20px;
-            width: 120px;
+            // width: 120px;
             cursor: pointer;
             color: #fff;
             background: transparent;
             border: none;
             outline: none;
             display: flex;
+            gap:20px;
                 // padding: 20px 50px;
                 justify-content: space-between;
             li {
@@ -66,4 +67,26 @@
                 }
         }
     }
+}
+
+.badge{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #2d442f;
+    position: absolute;
+    top: -20px;
+    font-weight: 800;
+    right: 0;
+}
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }

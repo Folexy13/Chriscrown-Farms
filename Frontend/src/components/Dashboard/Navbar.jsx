@@ -15,7 +15,11 @@ const DBNavbar = () => {
   const PATH = window.location.pathname;
   return (
     <div className="nav">
-      <div className="logo">
+      <div
+        className="logo"
+        onClick={() => nav("/")}
+        style={{ cursor: "pointer" }}
+      >
         <img src={logo} alt="" width={50} height={50} />
         <h1>hriscrown Farm</h1>
       </div>

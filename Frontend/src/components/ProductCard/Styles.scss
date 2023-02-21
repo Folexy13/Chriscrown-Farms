@@ -38,4 +38,13 @@
     justify-content: center;
     margin: 100px auto;
     // margin-left: -20px;
+    button{
+        background: darkgreen;
+        border: 0;
+        outline: 0;
+        color: #fff;
+        padding:7px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 }

@@ -10,6 +10,7 @@ import Table from "./Table";
 import Modal from "./Modal";
 import ProductCard from "./ProductCard";
 import DDBTN from "./DropdownButton";
+import EmptyState from "./EmptyState";
 
 export {
   Navbar,
@@ -24,4 +25,5 @@ export {
   DashboardLayout,
   ProductCard,
   Table,
+  EmptyState,
 };

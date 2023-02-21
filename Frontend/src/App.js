@@ -1,7 +1,7 @@
 import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ROUTES } from "./routes";
-import { Homepage, Login, Register } from "./Pages/Public";
+import { Homepage, Login, Register, Cart } from "./Pages/Public";
 import { Dashboard } from "./Pages/Private";
 import ProtectedPages from "./utils/protectedPage";
 
@@ -12,6 +12,7 @@ const AppRoute = () => {
         <Route path={ROUTES.HOME} element={<Homepage />} />
         <Route path={ROUTES.LOGIN} element={<Login />} />
         <Route path={ROUTES.REGISTER} element={<Register />} />
+        <Route path={ROUTES.CART} element={<Cart />} />
         <Route element={<ProtectedPages />}>
           <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
           <Route path={ROUTES.PAYMENTS} element={<Dashboard />} />
